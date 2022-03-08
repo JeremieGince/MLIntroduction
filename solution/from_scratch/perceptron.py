@@ -54,6 +54,9 @@ class Perceptron:
 		self.biais = None
 
 	def fit(self, X, y):
+		# One-hot encoding of nominal y-values
+		y = to_categorical(y)
+
 		n_samples, n_features = np.shape(X)
 
 		_, n_outputs = np.shape(y)
@@ -79,6 +82,7 @@ class Perceptron:
 
 	def predict(self, X):
 		y_pred = self.activation_func(X.dot(self.weight) + self.biais)
+		y_pred = np.argmax(y_pred, axis=-1)
 		return y_pred
 
 
@@ -86,9 +90,6 @@ if __name__ == "__main__":
 	data = datasets.load_digits()
 	X = normalize(data.data)
 	y = data.target
-
-	# One-hot encoding of nominal y-values
-	y = to_categorical(y)
 
 	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 
