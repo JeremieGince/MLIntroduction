@@ -12,9 +12,11 @@ Exercice d'introduction à l'apprentissage machine.
     de sklearn:
     1. ```fit(X: np.ndarray, y: np.ndarray) -> None```
     2. ```predict(self, X: np.ndarray, y: Optional[np.ndarray] = None) -> np.ndarray```
- 4. Refaite le même exercice, mais avec le perceptron dans le fichier "exercice/from_scratch/perceptron.py".
- 5. Finalement, vous pouvez comparer les résultats des algorithmes en les entraînant sur le dataset "digits" de sklearn.
-    la fonction suivante vous sera utile pour downloader le dataset ```X, y = datasets.load_digits(return_X_y=True)```.
+ 3. Refaite le même exercice, mais avec le perceptron dans le fichier "exercice/from_scratch/perceptron.py".
+ 4. Finalement, vous pouvez comparer les résultats des algorithmes en les entraînant sur le dataset 
+    [digits](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html) de sklearn.
+    la fonction suivante vous sera utile pour downloader le dataset 
+    ```X, y = datasets.load_digits(return_X_y=True)```.
     1. Vous aurez à calculer la [matrice de confusion](https://en.wikipedia.org/wiki/Confusion_matrix) de la 
        classification des classifications. Afficher les sous forme de heatmap ou d'image afin de pouvoir les visualiser.
     2. De plus, calculer les [métriques](https://en.wikipedia.org/wiki/Precision_and_recall) suivantes pour chaque 
