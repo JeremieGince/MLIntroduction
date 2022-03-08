@@ -24,6 +24,11 @@ Exercice d'introduction à l'apprentissage machine.
        1. Accuracy
        2. Recall
        3. F1Score
+       
+       Ces métriques doivent être calculée sur votre ensemble de test pour être en mesure de savoir si vous avez
+       underfit ou overfit vos données d'apprentissages. La fonction suivante de sklearn vous sera utile:
+          - ```sklearn.model_selection.train_test_split```
+          - ```X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)```.
 
 
 
