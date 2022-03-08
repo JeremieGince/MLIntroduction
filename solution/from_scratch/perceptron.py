@@ -5,6 +5,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import time
 import pandas
+from sklearn import datasets
 
 
 class Sigmoid:
@@ -36,10 +37,9 @@ class Perceptron:
 
 	def fit(self, X, y):
 		n_samples, n_features = np.shape(X)
-		_, n_outputs = np.shape(y)
 
-		self.weight = np.random.uniform(0, 1, (n_features, n_outputs))
-		self.biais = np.zeros((1, n_outputs))
+		self.weight = np.random.uniform(0, 1, n_features)
+		self.biais = 0
 
 		for i in range(self.n_iterations):
 			linear_output = X.dot(self.weight) + self.biais
@@ -62,6 +62,8 @@ class Perceptron:
 
 
 if __name__ == "__main__":
+	clf = Perceptron()
+
 	iris = datasets.load_iris(as_frame=True)
 	X = iris.data
 	y = iris.target
@@ -98,12 +100,6 @@ if __name__ == "__main__":
 
 		# Entraînez le classifieur
 		clf.fit(X, R)
-
-		# Obtenez et affichez son erreur (1 - accuracy)
-		err = 1 - clf.score(X, R)
-
-		# Ajout de l'erreur pour affichage
-		erreurs[f'{f1_name} {f2_name}'] = err
 
 		# Utilisez la grille que vous avez créée plus haut
 		# pour afficher les régions de décision, de même
